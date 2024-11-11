@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1 Game - <%= races.length > 0 ? races[0].nume_cursa : "Cursă necunoscută" %></title>
+    <link rel="stylesheet" href="/css/stil.css">
+</head>
+<body>
+    <header>
+        <h1>Formula 1 Game - Cursa: <span id="race-title"><%= races.length > 0 ? races[0].nume_cursa : "Cursă necunoscută" %></span></h1>
+        <button id="start-race">Start Race</button>
+        <button id="reset-game">Resetare Joc</button> <!-- Butonul de resetare joc -->
+    </header>
+
+    <main id="drivers-container">
+        <% drivers.forEach(driver => { %>
+            <div class="driver-card" data-ability="<%= driver.abilitate %>">
+                <h2><%= driver.nume %> <%= driver.prenume %></h2>
+                <p>Echipa: <%= driver.echipa %></p>
+                <p>Naționalitate: <%= driver.nationalitate %></p>
+                
+                <!-- Afișarea imaginii naționalității -->
+                <img src="/imagini/imagine_nationalitate/<%= driver.poza_nationalitate %>" alt="Poza Nationalitate" style="width: 50px; height: 50px;">
+                
+                <!-- Afișarea imaginii echipei -->
+                <img src="/imagini/imagine_echipa/<%= driver.poza_echipa %>" alt="Poza Echipa" style="width: 50px; height: 50px;">
+                
+                <p id="position-<%= driver.id_pilot %>">Poziție: -</p>
+                <p id="points-<%= driver.id_pilot %>">Puncte: 0</p>
+            </div>
+        <% }); %>
+    </main>
+
+    <h2 style="display: none;">Scorul Curselor</h2>
+    <table id="score-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Cursa</th>
+                <th>Pilot</th>
+                <th>Poziție</th>
+                <th>Puncte</th>
+            </tr>
+        </thead>
+        <tbody id="score-table-body">
+            <% results.forEach(result => { %>
+                <tr>
+                    <td><%= result.nume_cursa %></td>
+                    <td><%= result.nume %> <%= result.prenume %></td>
+                    <td><%= result.pozitie_finala %></td>
+                    <td><%= result.calificari %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <script>
+        const races = <%- JSON.stringify(races) %>;
+    </script>
+    <script src="/js/formula1.js"></script>
+</body>
+</html>

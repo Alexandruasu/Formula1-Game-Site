@@ -1,0 +1,166 @@
+/* Font și fundal general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7f9; /* Fundal deschis albastru-verzui */
+    color: #333;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #2a3d45; /* Verde închis/albastru petrol */
+    color: #d1ffb0; /* Lime deschis */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin: 0;
+}
+
+button#start-race {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    background-color: #41c300; /* Verde lime aprins */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button#start-race:hover {
+    background-color: #34a600; /* Verde mai închis */
+    transform: scale(1.05);
+}
+
+/* Container pentru piloți */
+#drivers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+    justify-content: center;
+}
+
+/* Carduri stilizate pentru fiecare pilot */
+.driver-card {
+    background: linear-gradient(145deg, #ffffff, #dff0e6); /* Gradient alb-verzui pentru card */
+    border-radius: 15px;
+    padding: 20px;
+    width: 220px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    border: 2px solid #b2dfdb; /* Bordura deschisă */
+}
+
+.driver-card:hover {
+    transform: translateY(-8px);
+    background-color: #daf5e5; /* Verde foarte deschis la hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Text stilizat în carduri */
+.driver-card h2 {
+    font-size: 1.5em;
+    color: #2a3d45; /* Verde închis/albastru petrol */
+    margin-bottom: 10px;
+}
+
+.driver-card p {
+    font-size: 1em;
+    color: #3d5a5b; /* Albastru verzui */
+    margin: 5px 0;
+}
+
+/* Stil pentru puncte și poziții */
+#points, #position {
+    font-weight: bold;
+    color: #41c300; /* Verde lime pentru accent */
+}
+
+/* Footer stilizat */
+footer {
+    background-color: #2a3d45;
+    color: #d1ffb0;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+button#reset-game {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    background-color: #ff9800; /* Portocaliu deschis */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4); /* Umbră portocaliu deschis */
+}
+
+button#reset-game:hover {
+    background-color: #fb8c00; /* Portocaliu mai închis */
+    transform: scale(1.05); /* Mărire la hover */
+    box-shadow: 0 6px 15px rgba(251, 140, 0, 0.5); /* Umbră mai intensă */
+}
+
+/* Efect activ */
+button#reset-game:active {
+    transform: scale(0.98); /* Ușoară reducere când este apăsat */
+    box-shadow: 0 2px 5px rgba(251, 140, 0, 0.5); /* Umbră redusă */
+}
+.points-animation {
+    animation: pointsChangeGood 0.6s ease-in-out;
+}
+.no-points-animation {
+    animation: pointsChangeBad 0.6s ease-in-out;
+}
+
+@keyframes pointsChangeGood {
+    0% {
+        transform: scale(1);
+        color: #41c300;
+    }
+    50% {
+        transform: scale(1.3);
+        color: #ffc107;
+    }
+    100% {
+        transform: scale(1);
+        color: #41c300;
+    }
+}
+@keyframes pointsChangeBad {
+    0% {
+        transform: scale(1);
+        color: #a71d1d;
+    }
+    50% {
+        transform: scale(1.3);
+        color: #635e51;
+    }
+    100% {
+        transform: scale(1);
+        color: #a71d1d;
+    }
+}
+
+.hidden {
+    display: none;
+}
+/* 
+.points-animation {
+    animation: pointsChangeGood 0.65s ease-in-out;   
+} */
+/*
+.no-points-animation {
+    animation: pointsChangeBad 0.65s ease-in-out; 
+} */
