@@ -10,20 +10,21 @@
     <header>
         <h1>Formula 1 Game - Cursa: <span id="race-title"><%= races.length > 0 ? races[0].nume_cursa : "Cursă necunoscută" %></span></h1>
         <button id="start-race">Start Race</button>
-        <button id="reset-game">Resetare Joc</button> <!-- Butonul de resetare joc -->
+        <button id="reset-game">Resetare Joc</button>
+        <select id="year-select" class="styled-dropdown">
+            <% years.forEach(year => { %>
+                <option value="<%= year %>" <%= year === selectedYear ? 'selected' : '' %>><%= year %></option>
+            <% }); %>
+        </select>
     </header>
 
     <main id="drivers-container">
         <% drivers.forEach(driver => { %>
             <div class="driver-card" data-ability="<%= driver.abilitate %>">
-                <h2><%= driver.nume %> <%= driver.prenume %></h2>
+                <h2><%= driver.prenume %> <%= driver.nume %></h2>
                 <p>Echipa: <%= driver.echipa %></p>
                 <p>Naționalitate: <%= driver.nationalitate %></p>
-                
-                <!-- Afișarea imaginii naționalității -->
                 <img src="/imagini/imagine_nationalitate/<%= driver.poza_nationalitate %>" alt="Poza Nationalitate" style="width: 50px; height: 50px;">
-                
-                <!-- Afișarea imaginii echipei -->
                 <img src="/imagini/imagine_echipa/<%= driver.poza_echipa %>" alt="Poza Echipa" style="width: 50px; height: 50px;">
                 
                 <p id="position-<%= driver.id_pilot %>">Poziție: -</p>

@@ -1,18 +1,16 @@
-/* Font și fundal general */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e0f7f9; /* Fundal deschis albastru-verzui */
+    background-image: linear-gradient(to right, #2b322e, #7dd53f);
     color: #333;
 }
 
-/* Header */
 header {
     text-align: center;
     padding: 20px;
-    background-color: #2a3d45; /* Verde închis/albastru petrol */
-    color: #d1ffb0; /* Lime deschis */
+    background-image: linear-gradient(to right, #2a3d45, #d1ffb0); 
+    color: #d1ffb0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -25,7 +23,7 @@ button#start-race {
     padding: 12px 25px;
     font-size: 1.1em;
     margin-top: 20px;
-    background-color: #41c300; /* Verde lime aprins */
+    background-color: #41c300; 
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -34,11 +32,10 @@ button#start-race {
 }
 
 button#start-race:hover {
-    background-color: #34a600; /* Verde mai închis */
+    background-color: #34a600; 
     transform: scale(1.05);
 }
 
-/* Container pentru piloți */
 #drivers-container {
     display: flex;
     flex-wrap: wrap;
@@ -47,44 +44,40 @@ button#start-race:hover {
     justify-content: center;
 }
 
-/* Carduri stilizate pentru fiecare pilot */
 .driver-card {
-    background: linear-gradient(145deg, #ffffff, #dff0e6); /* Gradient alb-verzui pentru card */
+    background-image: linear-gradient(to right, #ffffff, rgb(196, 209, 175));
     border-radius: 15px;
     padding: 20px;
     width: 220px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-    border: 2px solid #b2dfdb; /* Bordura deschisă */
+    border: 2px solid #b2dfdb;
 }
 
 .driver-card:hover {
     transform: translateY(-8px);
-    background-color: #daf5e5; /* Verde foarte deschis la hover */
+    background-color: #daf5e5;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 14px 28px rgba(0, 0, 0, 0.2);
 }
 
-/* Text stilizat în carduri */
 .driver-card h2 {
     font-size: 1.5em;
-    color: #2a3d45; /* Verde închis/albastru petrol */
+    color: #2a3d45;
     margin-bottom: 10px;
 }
 
 .driver-card p {
     font-size: 1em;
-    color: #3d5a5b; /* Albastru verzui */
+    color: #3d5a5b;
     margin: 5px 0;
 }
 
-/* Stil pentru puncte și poziții */
 #points, #position {
     font-weight: bold;
-    color: #41c300; /* Verde lime pentru accent */
+    color: #41c300;
 }
 
-/* Footer stilizat */
 footer {
     background-color: #2a3d45;
     color: #d1ffb0;
@@ -97,25 +90,24 @@ button#reset-game {
     padding: 12px 25px;
     font-size: 1.1em;
     margin-top: 20px;
-    background-color: #ff9800; /* Portocaliu deschis */
+    background-color: #ff9800; 
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4); /* Umbră portocaliu deschis */
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4); 
 }
 
 button#reset-game:hover {
-    background-color: #fb8c00; /* Portocaliu mai închis */
-    transform: scale(1.05); /* Mărire la hover */
-    box-shadow: 0 6px 15px rgba(251, 140, 0, 0.5); /* Umbră mai intensă */
+    background-color: #fb8c00; 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(251, 140, 0, 0.5); 
 }
 
-/* Efect activ */
 button#reset-game:active {
-    transform: scale(0.98); /* Ușoară reducere când este apăsat */
-    box-shadow: 0 2px 5px rgba(251, 140, 0, 0.5); /* Umbră redusă */
+    transform: scale(0.98); 
+    box-shadow: 0 2px 5px rgba(251, 140, 0, 0.5); 
 }
 .points-animation {
     animation: pointsChangeGood 0.6s ease-in-out;
@@ -164,3 +156,34 @@ button#reset-game:active {
 .no-points-animation {
     animation: pointsChangeBad 0.65s ease-in-out; 
 } */
+ /* Stil pentru dropdown-ul de selecție a anului */
+/* Stilizare dropdown */
+.styled-dropdown {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #2a3d45;
+    background-color: #d1ffb0; 
+    color: #2a3d45; 
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.styled-dropdown:hover {
+    background-color: #b0e5a0; 
+    color: #183d3d;
+}
+
+.styled-dropdown:focus {
+    outline: none;
+    border-color: #41c300; 
+    background-color: #032432; 
+    color: #d1ffb0; 
+    box-shadow: 0px 0px 10px rgba(65, 195, 0, 0.5);
+}
+
+.styled-dropdown option {
+    background-color: #1e754d; 
+    color: #d1ffb0; 
+}
